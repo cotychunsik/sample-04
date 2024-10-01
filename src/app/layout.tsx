@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
-import localFont from "next/font/local";
 import "./globals.css";
+import MobNav from "./components/MobNav";
+import Nav from "./components/Nav";
+import { config } from '@fortawesome/fontawesome-svg-core';
+import '@fortawesome/fontawesome-svg-core/styles.css'; // Import the CSS
+import { library } from '@fortawesome/fontawesome-svg-core';
+import {faShuttleSpace} from '@fortawesome/free-solid-svg-icons';
+import { faJedi } from "@fortawesome/free-solid-svg-icons/faJedi";
+import { faMeteor } from "@fortawesome/free-solid-svg-icons/faMeteor";
+import { faHandsHoldingCircle } from "@fortawesome/free-solid-svg-icons/faHandsHoldingCircle";
 
-const geistSans = localFont({
-  src: "./fonts/GeistVF.woff",
-  variable: "--font-geist-sans",
-  weight: "100 900",
-});
-const geistMono = localFont({
-  src: "./fonts/GeistMonoVF.woff",
-  variable: "--font-geist-mono",
-  weight: "100 900",
-});
+library.add(faShuttleSpace, faJedi, faMeteor, faHandsHoldingCircle);
+
+config.autoAddCss = false; // Prevent Font Awesome from adding its own CSS
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -25,10 +26,23 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
+      
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+        className="flex flex-col bg-zinc-900 overflow-x-hidden inter"
+      >        
+        {/* 모바일 화면에서만 MobNav 보이도록 */}
+      <div className="block md:hidden">
+        <MobNav />
+      </div>
+
+      {/* 600px 이상 화면에서만 Nav 보이도록 */}
+      <div className="hidden md:block">
+        <Nav />
+      </div>
+
+        <div className=" mx-auto">
         {children}
+        </div>
       </body>
     </html>
   );

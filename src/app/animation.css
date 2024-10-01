@@ -1,0 +1,289 @@
+@charset "UTF-8";
+
+/* main */
+.main .sec1 .txt span {
+  animation-delay: 0.3s;
+}
+.main .sec1 .scroll span {
+  animation-delay: 0.6s;
+}
+.main .sec1 .line {
+  transition: 1.05s cubic-bezier(0.19, 1, 0.22, 1) 1.1s;
+}
+.not .main .sec1 .line {
+  transition: none;
+}
+.main .sec1 .scroll.ani.active .line {
+  height: 192px;
+}
+@media screen and (max-width: 767px) {
+  .main .sec1 .scroll.ani.active .line {
+    height: 58px;
+  }
+}
+.main .sec1-2 .lists ul {
+  animation: none;
+}
+.main .sec1-2 .lists ul li {
+  opacity: 0;
+}
+.main .sec1-2 .lists.ani.active ul li {
+  opacity: 1;
+  animation: posY-100-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+.main .sec1-2 .lists.ani.active ul li:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.main .sec1-2 .lists.ani.active ul li:nth-child(3) {
+  animation-delay: 0.2s;
+}
+.main .sec1-2 .lists.ani.active ul li:nth-child(4) {
+  animation-delay: 0.3s;
+}
+.main .sec1-2 .lists.ani.active ul li:nth-child(5) {
+  animation-delay: 0.4s;
+}
+.main .sec1-2 .lists.ani.active ul li:nth-child(6) {
+  animation-delay: 0.5s;
+}
+.main .sec1-3 h1 span {
+  animation-delay: 0.1s;
+}
+.main .sec1-3 .count-lists ul.ani.active li {
+  animation: posY-100-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+.main .sec2 .swiper-slide.swiper-slide-active .title h3 span {
+  animation: posY-100-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.6s both;
+}
+.main .sec2 .swiper-slide.swiper-slide-active .title h1 span {
+  animation: posY-110per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.7s both;
+}
+.main .sec2 .swiper-slide.swiper-slide-active .content p span {
+  animation: posY-100-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.7s both;
+}
+.main .sec2 .swiper-slide.swiper-slide-active .content a span {
+  animation: posY-110per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.8s both;
+}
+@media screen and (max-width: 767px) {
+  .main .sec2 .swiper-slide.swiper-slide-active .title h3 span {
+    animation-delay: 0.3s;
+  }
+  .main .sec2 .swiper-slide.swiper-slide-active .title h1 span {
+    animation-delay: 0.4s;
+  }
+  .main .sec2 .swiper-slide.swiper-slide-active .content p span {
+    animation-delay: 0.5s;
+  }
+  .main .sec2 .swiper-slide.swiper-slide-active .content a span {
+    animation-delay: 0.6s;
+  }
+}
+
+/* company */
+.company .sec2 .title-p.ani.active span {
+  animation-delay: 0.1s;
+}
+.company .sec2 .p-box h3.ani.active span {
+  animation-delay: 0.2s;
+}
+.company .sec2 .p-box p.ani.active span {
+  animation-delay: 0.3s;
+}
+.company .sec2 .p-box ul.ani.active li {
+  animation-delay: 0.4s;
+}
+.company .sec3 .p2.ani.active span {
+  animation-delay: 0.1s;
+}
+.company .sec4 p.ani.active span {
+  animation-delay: 0.1s;
+}
+.company .slide.ani.active .swiper2 {
+  animation: posY-30per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.2s both;
+}
+.company .organization-chart.ani.active > ul {
+  animation: posY-30per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+.company .sec6 ul li.ani.active:nth-child(1) > div {
+  animation-delay: 0.1s;
+}
+.company .sec6 ul li.ani.active:nth-child(2) > div {
+  animation-delay: 0.2s;
+}
+.company .sec6 ul li.ani.active:nth-child(3) > div {
+  animation-delay: 0.3s;
+}
+.company .sec6 ul li.ani.active:nth-child(4) > div {
+  animation-delay: 0.4s;
+}
+.company .sec6 ul li.ani.active:nth-child(5) > div {
+  animation-delay: 0.5s;
+}
+.company .sec7 .slide.ani.active > * {
+  animation: posY-30per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.1s both;
+}
+.company .sec8 .history.ani.active .year-ul {
+  animation: posY-100-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+.company .sec9 h1.ani.active span {
+  animation-delay: 0.1s;
+}
+.company .sec9 .address.ani.active li:nth-child(1) {
+  animation-delay: 0.2s;
+}
+.company .sec9 .address.ani.active li:nth-child(2) {
+  animation-delay: 0.3s;
+}
+.company .sec9 .info.ani.active li {
+  animation-delay: 0.4s;
+}
+.company .sec9 .map.ani.active iframe {
+  animation: posY-30per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.5s both;
+}
+
+/* solution */
+.solution .sec2 .text-box.ani.active h1 {
+  animation: none;
+  overflow: hidden;
+}
+.solution .sec2 .text-box.ani.active h1 span {
+  opacity: 1;
+  display: block;
+  animation: posY-110per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.1s both;
+}
+.solution .sec2 .text-box.ani.active h3 {
+  animation: none;
+  overflow: hidden;
+}
+.solution .sec2 .text-box.ani.active h3 span {
+  opacity: 1;
+  display: block;
+  animation: posY-110per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.2s both;
+}
+.solution .sec2 .text-box.ani.active p {
+  animation: posY-30per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.3s both;
+}
+.solution .sec2 .text-box.ani.active:after {
+  animation: to-left 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.4s both;
+}
+.solution .sec2 .text-box2.ani.active h1 {
+  animation: none;
+  overflow: hidden;
+}
+.solution .sec2 .text-box2.ani.active h1 span {
+  opacity: 1;
+  display: block;
+  animation: posY-110per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.1s both;
+}
+.solution .sec2 .text-box2.ani.active img {
+  animation: posY-100-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.2s both;
+}
+.solution .sec2 .pom-lists > li.ani.active > div {
+  animation: posY-100-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+.title-box h2.ani.active span {
+  animation-delay: 0.1s;
+}
+.title-box p.ani.active span {
+  animation: posY-30per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.2s both;
+}
+.link.type2.ani.active a {
+  animation-delay: 0.3s;
+}
+.title-box .link.ani.active a {
+  animation-delay: 0.3s;
+}
+.title-box .img-box.ani.active > * {
+  animation: posY-10per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.4s both;
+}
+.title-box .img-box.ani.active .video-box {
+  animation: fadeIn 0.6s ease-in-out 1s both;
+}
+
+/* business */
+.business .sec1 h2.ani.active span {
+  animation: posY-30per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+.business .sec1 p.ani.active span {
+  animation: posY-30per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+.business .sec1 p.ani.active:before {
+  width: 100%;
+}
+.business .sec2 .img.ani.active img {
+  animation: posY-30per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.2s both;
+}
+.mc-lists.ani.active > * {
+  animation: posY-10per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.1s both;
+}
+.mc-lists .more.ani.active > * {
+  animation: posY-110per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.2s both;
+}
+.mc-lists .info.ani.active > ul {
+  animation: posY-110per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.3s both;
+}
+
+/* carrer */
+.career .sec2 h2.ani.active span {
+  animation-delay: 0.1s;
+}
+.career .sec2 .p-box p:nth-child(1).ani.active span {
+  animation: posY-30per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.2s both;
+}
+.career .sec2 .p-box p:nth-child(2).ani.active span {
+  animation: posY-30per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.3s both;
+}
+.career .sec3 .swiper-slide.swiper-slide-active .title h3 span {
+  animation: posY-100-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.6s both;
+}
+.career .sec3 .swiper-slide.swiper-slide-active .title h1 span {
+  animation: posY-100-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.7s both;
+}
+.career .sec3 .swiper-slide.swiper-slide-active .content:before {
+  transition: 1.05s 0.7s;
+  opacity: 1;
+}
+.career .sec3 .swiper-slide.swiper-slide-active .content b span {
+  animation: posY-100-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.7s both;
+}
+.career .sec3 .swiper-slide.swiper-slide-active .content p span {
+  animation: posY-100-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.8s both;
+}
+.career .sec4 .title3.ani.active span {
+  animation-delay: 0.1s;
+}
+.career .sec4 .p1.ani.active span {
+  animation-delay: 0.2s;
+}
+.career .sec4 .p2.ani.active span {
+  animation-delay: 0.3s;
+}
+.career .sec4 ul.ani.active:before {
+  animation: posY-10per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.4s both;
+}
+.career .sec4 ul.ani.active > * {
+  animation: posY-30per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.4s both;
+}
+.career .sec5 ol li.ani.active .list-wrap {
+  animation: posY-30per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) 0.1s both;
+}
+.career .sec6 h3.ani.active span {
+  animation-delay: 0.1s;
+}
+.media .sec2 .news-lists li.ani.active a {
+  animation: posY-30per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+.media .sec2 .slide.mo.ani.active .news-swiper {
+  animation: posY-30per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+.media .sec3 .download-lists.ani.active > ul {
+  animation: posY-30per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) both;
+}
+@media screen and (max-width: 767px) {
+  .media .sec2 .slide.mo.ani.active .news-swiper {
+    animation: posY-10per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) both;
+  }
+  .media .sec3 .download-lists.ani.active > ul {
+    animation: posY-10per-up 1.05s cubic-bezier(0.19, 1, 0.22, 1) both;
+  }
+}
