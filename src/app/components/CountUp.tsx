@@ -41,7 +41,12 @@ export default function CountUp({ start, end, duration, className }: CountUpProp
     function step(timestamp: number) {
       if (!startTime) startTime = timestamp;
       const progress = Math.min((timestamp - startTime) / duration, 1);
-      element.textContent = Math.floor(progress * (end - start) + start).toString();
+
+      // Check if element is still not null
+      if (element) {
+        element.textContent = Math.floor(progress * (end - start) + start).toString();
+      }
+      
       if (progress < 1) {
         window.requestAnimationFrame(step);
       }

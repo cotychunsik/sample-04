@@ -1,7 +1,9 @@
 'use client';
 import { useEffect, useRef, useState, MutableRefObject } from "react";
 
-const useIntersectionObserver = (options: any): [MutableRefObject<null>, boolean] => {
+const useIntersectionObserver = (
+  options: IntersectionObserverInit
+): [MutableRefObject<null>, boolean] => {
   const [isVisible, setIsVisible] = useState(false);
   const ref = useRef(null);
 
@@ -26,4 +28,3 @@ const useIntersectionObserver = (options: any): [MutableRefObject<null>, boolean
 };
 
 export default useIntersectionObserver;
-
