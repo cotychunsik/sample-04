@@ -1,0 +1,65 @@
+사이트 구조:
+Hero Section (소개글 & 회사 이름)
+
+회사 이름: "Galaxia Journeys" (예시)
+슬로건: "Explore the Final Frontier – Your Journey Beyond the Stars"
+소개글:
+"Galaxia Journeys는 인류가 꿈꿔온 우주 탐험을 현실로 만듭니다. 가장 안전하고 신뢰할 수 있는 우주여행 프로그램으로, 무한한 우주를 직접 경험해 보세요. 더 이상 꿈이 아닌, 여러분의 미래입니다. 함께 새로운 세계를 탐험하세요!"
+Call to Action: "여행 예약하기", "자세히 알아보기"
+Mission Statement (미션 선언문)
+
+제목: "Our Mission"
+내용:
+"우리는 누구나 우주를 탐험할 수 있는 시대를 열어가고 있습니다. Galaxia Journeys는 우주여행의 새로운 표준을 제시하며, 최고의 기술력과 경험을 바탕으로 안전하고 혁신적인 우주 탐험을 제공합니다."
+Services Section (서비스 소개)
+
+제목: "Our Space Adventures"
+내용:
+"다양한 우주여행 옵션을 통해 특별한 경험을 제공합니다."
+Low Earth Orbit: 지구 궤도를 돌며 지구를 관찰하는 독특한 체험.
+Moon Exploration: 달 착륙 미션 및 탐험.
+Deep Space Journey: 화성, 소행성대 등 심우주 탐험.
+Call to Action: 각 여행 패키지에 대한 자세한 내용과 예약 버튼.
+Spacecraft & Technology (우주선 & 기술 소개)
+
+제목: "Cutting-Edge Spacecraft"
+내용:
+"최첨단 기술이 적용된 우주선을 통해 안전하고 편안한 우주 여행을 보장합니다. Galaxia에서 사용하는 우주선은 전 세계 최고의 과학자들과 협력하여 개발된 최첨단 우주선입니다."
+특징 설명:
+Zero Gravity Comfort: 무중력 환경에서의 편안함 제공.
+Advanced Safety Systems: 최고의 안전 시스템.
+Interstellar Wi-Fi: 우주에서도 연결된 세계.
+Testimonials (고객 후기)
+
+제목: "What Our Space Explorers Say"
+내용:
+"우주 여행을 경험한 이들의 생생한 후기를 확인해보세요!"
+고객 1: "지구 밖에서 본 풍경은 말로 다 표현할 수 없어요. 그야말로 인생 최고의 경험!"
+고객 2: "무중력 상태에서 생활하는 것은 상상 이상으로 놀라웠습니다. Galaxia 덕분에 꿈을 이뤘습니다."
+FAQs (자주 묻는 질문)
+
+제목: "Frequently Asked Questions"
+내용:
+"우주여행에 대해 궁금한 점이 있으신가요? 아래에서 자주 묻는 질문들을 확인해보세요."
+"우주여행 비용은 얼마나 되나요?"
+"우주 여행에 필요한 사전 준비는 무엇인가요?"
+"여행은 얼마나 걸리나요?"
+About Us (회사 소개)
+
+제목: "About Galaxia Journeys"
+내용:
+"Galaxia Journeys는 우주 탐험의 선두주자로, 여러분의 꿈을 현실로 만드는 데 주력하고 있습니다. 세계 최고의 우주 전문가들과 함께, 우리는 안전하고 혁신적인 우주 여행을 제공합니다."
+Contact Us (문의하기)
+
+제목: "Get in Touch"
+내용:
+"우주여행에 관심이 있으신가요? 궁금한 점이 있으면 언제든 문의해주세요!"
+문의 폼: 이름, 이메일, 메시지 필드 및 연락 버튼.
+Blog or News Section (블로그 혹은 뉴스)
+
+제목: "Latest News in Space Travel"
+내용:
+"최신 우주여행 소식과 Galaxia Journeys의 새로운 소식을 확인하세요."
+Footer
+
+회사 이름, 주소, 소셜 미디어 링크 및 뉴스레터 구독.

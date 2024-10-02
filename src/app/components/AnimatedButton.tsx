@@ -15,13 +15,14 @@ const AnimatedButton: FC<AnimatedButtonProps> = ({ text }) => {
       whileHover={{ scale: 1.1 }}      // 호버 시 확대
       whileTap={{ scale: 0.9 }}        // 클릭 시 축소
       style={{
-        width:'180px',
-        padding: '20px',
-        backgroundColor: '#0070f3',
+        width:'140px',
+        padding: '10px',
+        backgroundColor: ' #ec4899',
         borderRadius: '8px',
-        color: '#fff',
+        color: '#000000',
         cursor: 'pointer',
         textAlign: 'center',
+        fontWeight:'bold'
       }}
     >
       {text}

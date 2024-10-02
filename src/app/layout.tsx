@@ -28,7 +28,7 @@ export default function RootLayout({
     <html lang="en">
       
       <body
-        className="flex flex-col bg-zinc-900 overflow-x-hidden inter"
+        className="flex flex-col bg-zinc-950 overflow-x-hidden inter"
       >        
         {/* 모바일 화면에서만 MobNav 보이도록 */}
       <div className="block md:hidden">

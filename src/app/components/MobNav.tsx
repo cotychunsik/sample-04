@@ -9,7 +9,7 @@ export default function MobileNavbar() {
   return (
     <nav className="relative  w-full p-4 flex  items-center">
       {/* 로고 */}
-      <div className="text-xl font-bold text-gradient">🚀Galaxy Journeys</div>
+      <div className="text-xl font-bold text-gradient">🚀Galaxia Journeys</div>
 
       {/* 메뉴 버튼 */}
       <div onClick={() => setIsMenuOpen(!isMenuOpen)} className="cursor-pointer p-2">
@@ -28,17 +28,17 @@ export default function MobileNavbar() {
             <li>
           <Link href="/" className="nav-text-set">Home</Link>
         </li>
+        {/* <li>
+          <Link href="/Section3" className="nav-text-set">Servies</Link>
+        </li> */}
         <li>
-          <Link href="/gallery" className="nav-text-set">Servies</Link>
-        </li>
-        <li>
-          <Link href="/contact" className="nav-text-set">FAQ</Link>
+          <Link href="../pages/FAQ" className="nav-text-set">FAQ</Link>
         </li>
          <li>
-          <Link href="/contact" className="nav-text-set">Blog</Link>
+          <Link href="https://cham8cham.vercel.app/pages/Contact" className="nav-text-set">Blog</Link>
         </li>
          <li>
-          <Link href="/contact" className="nav-text-set">Contact</Link>
+          <Link href="https://cham8cham.vercel.app/pages/Contact" className="nav-text-set">Contact</Link>
         </li>
           </ul>
         </div>

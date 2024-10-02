@@ -106,3 +106,14 @@ body {
 .flip-card-back {
   transform: rotateY(180deg);
 }
+
+.card-frontal-css{
+  @apply backdrop-blur-2xl cursor-pointer backdrop-brightness-125 
+           w-full h-48 rounded-md sm:rounded-3xl flex justify-center items-center hover:scale-105;
+}
+
+.card-back-css {
+  @apply bg-gradient-to-bl from-blue-500 via-purple-500 to-pink-500 
+  shadow-lg shadow-indigo-500/50 
+         w-full h-48 rounded-md sm:rounded-3xl flex justify-center items-center text-white;;
+}

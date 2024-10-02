@@ -27,15 +27,11 @@ export default function Section3() {
       >
         <div className="flip-card-inner">
           {/* Front side */}
-          <div className="
-          backdrop-blur-2xl
-          flip-card-front w-full h-48 rounded-md flex justify-center items-center hover:scale-105 ">
+          <div className="flip-card-front card-frontal-css">
             <FontAwesomeIcon icon={faSpaceShuttle} size="3x" className="-rotate-45 text-red-50" />
           </div>
           {/* Back side */}
-          <div className="
-          bg-gradient-to-bl from-blue-500 from-opacity-70 via-purple-500 to-pink-500 to-opacity-50
-          flip-card-back w-full h-48 rounded-md flex justify-center items-center text-white">
+          <div className="flip-card-back card-back-css">
             <p>Deep Space Journey</p>
           </div>
         </div>
@@ -47,16 +43,12 @@ export default function Section3() {
       >
         <div className="flip-card-inner">
           {/* Front side */}
-          <div className="
-          backdrop-blur-2xl
-          flip-card-front w-full h-48 rounded-md flex justify-center items-center hover:scale-105 ">
+          <div className="flip-card-front card-frontal-css">
             <FontAwesomeIcon icon={faHandsHoldingCircle} size="3x" className=" text-red-50" />
           </div>
           {/* Back side */}
-          <div className="
-          bg-gradient-to-bl from-blue-500 from-opacity-70 via-purple-500 to-pink-500 to-opacity-50
-          flip-card-back w-full h-48 rounded-md flex justify-center items-center text-white">
-            <p>Deep Space Journey</p>
+          <div className="flip-card-back card-back-css">
+            <p>Zero Gravity Comfort</p>
           </div>
         </div>
       </div>
@@ -67,16 +59,14 @@ export default function Section3() {
       >
         <div className="flip-card-inner">
           {/* Front side */}
-          <div className="
-          backdrop-blur-2xl
-          flip-card-front w-full h-48 rounded-md flex justify-center items-center hover:scale-105 ">
+          <div className="flip-card-front card-frontal-css
+           ">
             <FontAwesomeIcon icon={faMeteor} size="3x" className=" text-red-50" />
           </div>
           {/* Back side */}
-          <div className="
-          bg-gradient-to-bl from-blue-500 from-opacity-70 via-purple-500 to-pink-500 to-opacity-50
-          flip-card-back w-full h-48 rounded-md flex justify-center items-center text-white">
-            <p>Deep Space Journey</p>
+          <div className="flip-card-back card-back-css
+          ">
+            <p>Low Earth Orbit</p>
           </div>
         </div>
       </div>
