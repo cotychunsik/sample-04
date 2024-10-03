@@ -1,8 +1,9 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { useRouter, useSearchParams } from 'next/navigation';
 import 'react-quill/dist/quill.snow.css';
+import Delta from 'quill'; // Quill의 Delta 기본 내보내기
 
 // Quill Editor 로드
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
@@ -24,13 +25,17 @@ const toolbarOptions = [
   ['clean']
 ];
 
+// UnprivilegedEditor 타입 정의
+interface UnprivilegedEditor {
+  getContents: () => Delta;
+}
+
 export default function BlogEditor() {
   const router = useRouter();
   const searchParams = useSearchParams();
   const postIndex = searchParams.get('postIndex');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
-  const editorRef = useRef(null);
 
   useEffect(() => {
     if (postIndex !== null) {
@@ -57,6 +62,17 @@ export default function BlogEditor() {
     router.push('/pages/Blog');
   };
 
+  // Quill 에디터 변경 시 호출되는 함수의 타입을 명시적으로 설정
+  const handleQuillChange = (
+    value: string, // 에디터의 HTML 콘텐츠
+    delta: Delta,  // 변경 사항
+    source: string, // 변경의 출처 (user, api 등)
+    editor: UnprivilegedEditor // Quill 에디터 인스턴스
+  ) => {
+    setContent(value);
+    console.log(editor.getContents()); // Quill의 API를 사용할 수 있음
+  };
+
   return (
     <div className=''>
       <h1>{postIndex !== null ? '게시글 수정' : '새 게시글 작성'}</h1>
@@ -68,11 +84,11 @@ export default function BlogEditor() {
         className='w-full'
       />
       <div className='bg-slate-100'>
-        <ReactQuill 
-          ref={editorRef} // 에디터 참조 추가
-          value={content} 
-          onChange={setContent} 
-          modules={{ toolbar: toolbarOptions }} 
+        {/* ref 대신 ReactQuill의 onChange 핸들러를 사용 */}
+        <ReactQuill
+          value={content}
+          onChange={handleQuillChange} // Quill 에디터 내용 변경 시 핸들러
+          modules={{ toolbar: toolbarOptions }}
         />
       </div>
       <div className='mt-6'>
