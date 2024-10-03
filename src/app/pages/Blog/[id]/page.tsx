@@ -2,7 +2,7 @@
 import { useRouter } from 'next/navigation';
 import { useEffect, useState } from 'react';
 
-export default function PostPage({ params }) { 
+export default function PostPage({ params }):{params:any} { 
   const router = useRouter();
   const [post, setPost] = useState(null);
   const { id } = params; 
