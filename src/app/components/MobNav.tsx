@@ -35,7 +35,7 @@ export default function MobileNavbar() {
           <Link href="../pages/FAQ" className="nav-text-set">FAQ</Link>
         </li>
          <li>
-          <Link href="https://cham8cham.vercel.app/pages/Contact" className="nav-text-set">Blog</Link>
+          <Link href="../pages/Blog" className="nav-text-set">Blog</Link>
         </li>
          <li>
           <Link href="https://cham8cham.vercel.app/pages/Contact" className="nav-text-set">Contact</Link>
