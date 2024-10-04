@@ -1,4 +1,4 @@
-'use client'; 
+'use client';
 
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
@@ -6,7 +6,7 @@ import { ref, get, child, set } from 'firebase/database';
 import { database } from '../../../../firebaseConfig';
 
 export default function BlogEditor() {
-  const searchParams = useSearchParams(); // 클라이언트 사이드에서만 사용
+  const searchParams = useSearchParams(); // 이 훅을 클라이언트 컴포넌트 최상단에서 사용
   const postIndex = searchParams.get('postIndex');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
@@ -32,7 +32,7 @@ export default function BlogEditor() {
 
   const handleSavePost = () => {
     const newPost = { title, content };
-    const postId = postIndex || Date.now().toString(); // 새 글이면 ID 생성
+    const postId = postIndex || Date.now().toString();
 
     set(ref(database, 'blog/' + postId), newPost)
       .then(() => {
