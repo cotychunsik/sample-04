@@ -1,4 +1,4 @@
-'use client';
+'use client'; // 이 페이지가 클라이언트 컴포넌트임을 명시
 
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
@@ -6,10 +6,8 @@ import { ref, get, child, set } from 'firebase/database';
 import { database } from '../../../../firebaseConfig';
 
 export default function BlogEditor() {
-  // useSearchParams를 컴포넌트 최상단에서 호출
-  const searchParams = useSearchParams();
-  const postIndex = searchParams.get('postIndex'); // 클라이언트에서 검색 매개변수를 가져옴
-
+  const searchParams = useSearchParams(); // 클라이언트 사이드에서만 사용
+  const postIndex = searchParams.get('postIndex');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
@@ -30,7 +28,7 @@ export default function BlogEditor() {
           console.error(error);
         });
     }
-  }, [postIndex]); // postIndex가 변경될 때만 실행
+  }, [postIndex]);
 
   const handleSavePost = () => {
     const newPost = { title, content };
