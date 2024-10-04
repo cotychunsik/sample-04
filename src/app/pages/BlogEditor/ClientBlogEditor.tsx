@@ -51,7 +51,7 @@ export default function ClientBlogEditor() {
   }, [postIndex]);
 
   // Handle editor changes (captures HTML content)
-  const handleEditorChange = (content: string, _delta: Delta, _source: string, _editor: any) => {
+  const handleEditorChange = (content: string) => {
     setContent(content); // content includes HTML format
   };
 
