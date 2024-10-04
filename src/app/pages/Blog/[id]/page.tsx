@@ -3,6 +3,8 @@ import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation'; // 라우터 이동에 필요
 import { ref, get, child, remove } from 'firebase/database'; // Firebase 관련 함수들 가져오기
 import { database } from '../../../../../firebaseConfig'; // Firebase 설정 파일에서 database 가져오기
+import 'react-quill/dist/quill.snow.css';
+import DOMPurify from 'dompurify';
 
 interface Post {
   id: string;  // 게시글 ID를 상태로 관리
@@ -14,7 +16,8 @@ export default function PostPage() {
   const router = useRouter();
   const [post, setPost] = useState<Post | null>(null); // 게시글 상태
   const [postId, setPostId] = useState<string | null>(null); // 게시글 ID 상태
-
+  const sanitizedContent = DOMPurify.sanitize(post.content); // post.content를 sanitize 처리
+  
   useEffect(() => {
     // 예시: 데이터베이스에서 ID를 가져오는 로직
     const dbRef = ref(database);
@@ -56,7 +59,7 @@ export default function PostPage() {
     }
   };
 
-  if (!post) return <div>Loading...</div>;
+  if (!post || !post.content) return <div>Loading...</div>;
 
   return (
     <div className='text-slate-100 w-screen'>
@@ -65,7 +68,7 @@ export default function PostPage() {
           <h1>{post.title}</h1>
         </div>
         <div className='py-3 font-light border-b-2 border-slate-600'>
-      <div dangerouslySetInnerHTML={{ __html: post.content }}></div>
+      <div dangerouslySetInnerHTML={{ __html: sanitizedContent }} className='bg-slate-200 text-gray-800 p-4'></div>
       </div>
       <div className="button-group pt-4 flex gap-5 justify-end">
         <button onClick={handleEditPost} className="btn-edit btn-normal">수정하기</button>

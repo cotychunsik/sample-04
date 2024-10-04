@@ -5,6 +5,9 @@ import dynamic from 'next/dynamic';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { ref, get, child, set } from 'firebase/database';
 import { database } from '../../../../firebaseConfig';
+import  Delta  from 'quill';
+import 'react-quill/dist/quill.snow.css';
+
 
 // Quill 에디터를 동적으로 로드 (SSR 방지)
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
@@ -47,6 +50,11 @@ export default function ClientBlogEditor() {
     }
   }, [postIndex]);
 
+  // Handle editor changes (captures HTML content)
+  const handleEditorChange = (content: string, _delta: Delta, _source: string, _editor: any) => {
+    setContent(content); // content includes HTML format
+  };
+
   const handleSavePost = () => {
     const newPost = { title, content };
     const postId = postIndex || Date.now().toString();
@@ -63,7 +71,7 @@ export default function ClientBlogEditor() {
 
   return (
     <div className='w-screen'>
-        <div className='px-10 sm:px-20 md:px-80 lg:px-96'>
+        <div className='px-10 sm:px-20 md:px-40 lg:px-96'>
             <div>
       <h1>{postIndex !== null ? '게시글 수정' : '새 게시글 작성'}</h1>
       <input
@@ -77,7 +85,7 @@ export default function ClientBlogEditor() {
       <div className='bg-slate-200 mb-10'>
         <ReactQuill
             value={content}
-            onChange={setContent}
+            onChange={handleEditorChange}  // Updated to use handleEditorChange
             theme="snow"
             modules={{ toolbar: toolbarOptions }} // 툴바 옵션 설정
         />

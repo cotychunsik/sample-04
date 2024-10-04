@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
 import { ref, get, child } from 'firebase/database';
 import { database } from '../../../../firebaseConfig'; // Firebase 설정 파일에서 database 가져오기
+import 'react-quill/dist/quill.snow.css';
 
 // 게시글의 타입 정의
 interface Post {
