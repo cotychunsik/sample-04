@@ -9,7 +9,7 @@ import { database } from '../../../../firebaseConfig';
 // Quill 에디터를 동적으로 로드 (SSR 방지)
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false }); 
 
-export const dynamicRendering = 'force-dynamic'; // 동적 렌더링 설정 (이 줄 제거 가능)
+// export const dynamic = 'force-dynamic';  // 필요하다면 유지, 아니라면 제거 가능
 
 export default function BlogEditor() {
   const searchParams = useSearchParams();
