@@ -5,7 +5,6 @@ import dynamic from 'next/dynamic';
 import { useSearchParams, useRouter } from 'next/navigation';
 import { ref, get, child, set } from 'firebase/database';
 import { database } from '../../../../firebaseConfig';
-import  Delta  from 'quill';
 import 'react-quill/dist/quill.snow.css';
 
 
