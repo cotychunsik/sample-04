@@ -40,7 +40,7 @@ export default function Blog() {
 
   return (
     <div className='text-slate-200 w-screen mx-auto'>
-      <div className='px-10'>
+      <div className='px-10 sm:px-20 md:px-40 lg:px-80'>
         <div className='py-4 border-b-2 border-sky-800'>
           <h1 className='text-3xl font-semibold text-gray-400'>Blog Articles</h1>
         </div>

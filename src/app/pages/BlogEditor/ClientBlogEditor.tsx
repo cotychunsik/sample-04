@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
-import { useSearchParams } from 'next/navigation';
+import { useSearchParams, useRouter } from 'next/navigation';
 import { ref, get, child, set } from 'firebase/database';
 import { database } from '../../../../firebaseConfig';
 
@@ -15,6 +15,7 @@ export default function ClientBlogEditor() {
   const postIndex = searchParams.get('postIndex');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+  const router = useRouter();
 
   // 툴바 옵션 설정
   const toolbarOptions = [
@@ -53,6 +54,7 @@ export default function ClientBlogEditor() {
     set(ref(database, 'blog/' + postId), newPost)
       .then(() => {
         console.log('Post saved successfully');
+        router.push('/pages/Blog');
       })
       .catch((error) => {
         console.error('Error saving post: ', error);
@@ -61,7 +63,7 @@ export default function ClientBlogEditor() {
 
   return (
     <div className='w-screen'>
-        <div className='px-10'>
+        <div className='px-10 sm:px-20 md:px-80 lg:px-96'>
             <div>
       <h1>{postIndex !== null ? '게시글 수정' : '새 게시글 작성'}</h1>
       <input

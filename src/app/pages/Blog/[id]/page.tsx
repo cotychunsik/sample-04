@@ -60,7 +60,7 @@ export default function PostPage() {
 
   return (
     <div className='text-slate-100 w-screen'>
-      <div className='px-20'>
+      <div className='px-10 sm:px-20 md:px-40 lg:px-80' >
         <div className='py-5 border-b-2 border-slate-600 font-semibold text-xl'>
           <h1>{post.title}</h1>
         </div>
