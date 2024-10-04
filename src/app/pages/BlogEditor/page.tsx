@@ -1,15 +1,15 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import dynamicImport from 'next/dynamic'; // 이름을 'dynamicImport'로 변경하여 충돌 방지
+import dynamic from 'next/dynamic'; // Next.js의 dynamic 함수
 import { useSearchParams } from 'next/navigation';
 import { ref, get, child, set } from 'firebase/database';
 import { database } from '../../../../firebaseConfig';
 
-// Quill 에디터를 동적으로 로드 (SSR을 방지)
-const ReactQuill = dynamicImport(() => import('react-quill'), { ssr: false });
+// Quill 에디터를 동적으로 로드 (SSR 방지)
+const ReactQuill = dynamic(() => import('react-quill'), { ssr: false }); 
 
-export const dynamicRendering = 'force-dynamic'; // 동적 렌더링 강제
+export const dynamicRendering = 'force-dynamic'; // 동적 렌더링 설정 (이 줄 제거 가능)
 
 export default function BlogEditor() {
   const searchParams = useSearchParams();
