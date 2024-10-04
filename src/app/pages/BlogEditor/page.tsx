@@ -1,5 +1,5 @@
 'use client';
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import { useRouter, useSearchParams } from 'next/navigation';
 import 'react-quill/dist/quill.snow.css';
@@ -83,6 +83,8 @@ export default function BlogEditor() {
   };
 
   return (
+        <Suspense fallback={<div>Loading...</div>}>
+
     <div className=''>
       <h1>{postIndex !== null ? '게시글 수정' : '새 게시글 작성'}</h1>
       <input 
@@ -105,5 +107,6 @@ export default function BlogEditor() {
         </button>
       </div>
     </div>
+    </Suspense>
   );
 }
