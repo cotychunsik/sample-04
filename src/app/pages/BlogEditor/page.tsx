@@ -3,7 +3,9 @@ import { useState, useEffect } from 'react';
 import dynamic from 'next/dynamic';
 import { useRouter, useSearchParams } from 'next/navigation';
 import 'react-quill/dist/quill.snow.css';
+import { ref, set, get, child } from 'firebase/database'; // Firebase 관련 함수들 가져오기
 import Delta from 'quill'; // Quill의 Delta 기본 내보내기
+import { database } from '../../../../firebaseConfig'; // Firebase 설정 가져오기
 
 // Quill Editor 로드
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
@@ -33,33 +35,40 @@ interface UnprivilegedEditor {
 export default function BlogEditor() {
   const router = useRouter();
   const searchParams = useSearchParams();
-  const postIndex = searchParams.get('postIndex');
+  const postIndex = searchParams.get('postIndex'); // 기존 게시글 ID (수정 모드일 때 사용)
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
 
+  // Firebase에서 데이터 가져오기
   useEffect(() => {
     if (postIndex !== null) {
-      const storedPosts = JSON.parse(localStorage.getItem('posts') || '[]');
-      const post = storedPosts[parseInt(postIndex)];
-      if (post) {
-        setTitle(post.title);
-        setContent(post.content);
-      }
+      const dbRef = ref(database);
+      get(child(dbRef, `blog/${postIndex}`)).then((snapshot) => {
+        if (snapshot.exists()) {
+          const post = snapshot.val();
+          setTitle(post.title);
+          setContent(post.content);
+        } else {
+          console.log("No data available");
+        }
+      }).catch((error) => {
+        console.error(error);
+      });
     }
   }, [postIndex]);
 
+  // Firebase에 데이터 저장하기
   const handleSavePost = () => {
+    const postId = postIndex !== null ? postIndex : Date.now().toString(); // 고유 ID 생성 또는 기존 ID 사용
     const newPost = { title, content };
-    const storedPosts = JSON.parse(localStorage.getItem('posts') || '[]');
 
-    if (postIndex !== null) {
-      storedPosts[parseInt(postIndex)] = newPost;
-    } else {
-      storedPosts.push(newPost);
-    }
-
-    localStorage.setItem('posts', JSON.stringify(storedPosts));
-    router.push('/pages/Blog');
+    set(ref(database, 'blog/' + postId), newPost) // Firebase에 데이터 저장
+      .then(() => {
+        router.push('/pages/Blog'); // 저장 후 목록으로 돌아가기
+      })
+      .catch((error) => {
+        console.error("Error saving post: ", error);
+      });
   };
 
   // Quill 에디터 변경 시 호출되는 함수의 타입을 명시적으로 설정
@@ -84,7 +93,6 @@ export default function BlogEditor() {
         className='w-full'
       />
       <div className='bg-slate-100'>
-        {/* ref 대신 ReactQuill의 onChange 핸들러를 사용 */}
         <ReactQuill
           value={content}
           onChange={handleQuillChange} // Quill 에디터 내용 변경 시 핸들러
