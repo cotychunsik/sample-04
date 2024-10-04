@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useEffect } from 'react';
+import { useState, useEffect, Suspense } from 'react';
 import dynamic from 'next/dynamic'; // Next.js의 dynamic 함수
 import { useSearchParams } from 'next/navigation';
 import { ref, get, child, set } from 'firebase/database';
@@ -50,6 +50,8 @@ export default function BlogEditor() {
   };
 
   return (
+        <Suspense fallback={<div>Loading...</div>}>
+
     <div>
       <h1>{postIndex !== null ? '게시글 수정' : '새 게시글 작성'}</h1>
       <input
@@ -67,5 +69,6 @@ export default function BlogEditor() {
         {postIndex !== null ? '수정하기' : '게시하기'}
       </button>
     </div>
+    </Suspense>
   );
 }
