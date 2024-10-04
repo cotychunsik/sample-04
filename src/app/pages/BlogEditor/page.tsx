@@ -1,4 +1,4 @@
-'use client'; // 이 페이지가 클라이언트 컴포넌트임을 명시
+'use client'; 
 
 import { useState, useEffect } from 'react';
 import { useSearchParams } from 'next/navigation';
