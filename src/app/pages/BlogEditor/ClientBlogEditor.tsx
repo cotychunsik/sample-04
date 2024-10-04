@@ -8,12 +8,24 @@ import { database } from '../../../../firebaseConfig';
 
 // Quill 에디터를 동적으로 로드 (SSR 방지)
 const ReactQuill = dynamic(() => import('react-quill'), { ssr: false });
+import 'react-quill/dist/quill.snow.css'; // Quill CSS 로드
 
 export default function ClientBlogEditor() {
   const searchParams = useSearchParams();
   const postIndex = searchParams.get('postIndex');
   const [title, setTitle] = useState('');
   const [content, setContent] = useState('');
+
+  // 툴바 옵션 설정
+  const toolbarOptions = [
+    [{ 'header': '1' }, { 'header': '2' }, { 'font': [] }],
+    [{ 'list': 'ordered' }, { 'list': 'bullet' }],
+    ['bold', 'italic', 'underline', 'strike', 'blockquote'],
+    [{ 'align': [] }],
+    [{ 'color': [] }, { 'background': [] }],
+    ['link', 'image', 'video'],
+    ['clean']
+  ];
 
   useEffect(() => {
     if (postIndex !== null) {
@@ -48,18 +60,32 @@ export default function ClientBlogEditor() {
   };
 
   return (
-    <div>
+    <div className='w-screen'>
+        <div className='px-10'>
+            <div>
       <h1>{postIndex !== null ? '게시글 수정' : '새 게시글 작성'}</h1>
       <input
         type="text"
         placeholder="제목"
         value={title}
         onChange={(e) => setTitle(e.target.value)}
+        className='w-full'
       />
-      <ReactQuill value={content} onChange={setContent} theme="snow" />
-      <button onClick={handleSavePost}>
+      </div>
+      <div className='bg-slate-200 mb-10'>
+        <ReactQuill
+            value={content}
+            onChange={setContent}
+            theme="snow"
+            modules={{ toolbar: toolbarOptions }} // 툴바 옵션 설정
+        />
+      </div>
+      <div className='flex justify-end'>
+      <button onClick={handleSavePost} className='btn-normal text-slate-200'>
         {postIndex !== null ? '수정하기' : '게시하기'}
       </button>
+      </div>
+      </div>
     </div>
   );
 }
